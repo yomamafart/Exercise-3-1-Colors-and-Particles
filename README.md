@@ -51,7 +51,7 @@ After the paddle has been hit, we should also make the paddle's Highlight visibl
 		$Highlight.modulate.a -= decay
 ```
 
-If the ball hits the walls, we want them to flash red. This will be similar to our work with the sprites, except we will be manipulating the colors directly. In `res://Wall/Wall.gd`, if the wall is hit, set `$ColorRect.color = Color8(201,42,42)`. Then, in `_physics_process`, reduce the saturation and increase the value until it is white again:
+If the ball hits the walls, we want them to flash red. This will be similar to our work with the sprites, except we will be manipulating the colors directly. In `res://Wall/Wall.gd`, if the wall is hit, set `$ColorRect.color = Color8(201,42,42,255)`. Then, in `_physics_process`, reduce the saturation and increase the value until it is white again:
 ```
  	if $ColorRect.color.s > 0:
 		$ColorRect.color.s -= decay
@@ -116,9 +116,9 @@ Now, we want to procedurally color the bricks, depending on their score values. 
 The red and orange statements should look like this:
 ```
 	if score >= 100:
-		$ColorRect.color = Color8(224,49,49)
+		$ColorRect.color = Color8(224,49,49,255)
 	elif score >= 90:
-		$ColorRect.color = Color8(253,126,20)
+		$ColorRect.color = Color8(253,126,20,255)
 ```
 ## Particles
 
